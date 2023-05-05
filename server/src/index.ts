@@ -1,10 +1,10 @@
 import express from "express";
-import "dotenv";
+import * as dotenv from "dotenv";
+dotenv.config();
 import cors from "cors";
 import { MongoClient, ServerApiVersion } from "mongodb";
 import routes from "./routes";
-const uri =
-  "mongodb+srv://Pachimari:<password>@cluster0.tebr47z.mongodb.net/?retryWrites=true&w=majority";
+const uri = `mongodb+srv://${process.env.USERNAME_MONGO}:${process.env.PASSWORD}@cluster0.tebr47z.mongodb.net/?retryWrites=true&w=majority`;
 
 const client = new MongoClient(uri, {
   serverApi: {
