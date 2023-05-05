@@ -1,2 +1,2 @@
-# last-bite
-MelbHack
+# Last-bite
+A project for MelbHack event
