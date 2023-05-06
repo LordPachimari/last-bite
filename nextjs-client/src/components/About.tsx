@@ -2,24 +2,47 @@ import Image from "next/image";
 import Restaurant from "../../public/restaurant.jpg";
 import Business from "../../public/business.png";
 import User from "../../public/user.png";
+import Guy1 from "../../public/guy1.png";
+import Guy2 from "../../public/guy2.png";
+import Guy3 from "../../public/guy3.jpg";
+
 export default function About() {
   return (
     <section id="about">
       <div className="about-us">
         <div className="left-container">
-          <Image src={Restaurant} alt="about-img"></Image>
+          <Image className="about-img" src={Restaurant} alt="about-img"></Image>
         </div>
         <div className="right-container">
-          <h2>This is who we are.</h2>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam
-            minus velit neque ab aut molestias pariatur error quod earum modi
-            laudantium iste odio, tenetur fugit qui officia eligendi mollitia
-            provident!
-          </p>
-          <button>Learn More</button>
+            <h2>Our <span>Mission.</span></h2>
+            <p>LastBite aims to address the goal of achieving responsible consumption and production and helps us strive forward to achieve said goal. According to the UN nearly 17% of total food that is available to consumers is wasted at household, food service and retail levels. These unsustainable patterns of purchase and consumption can have many adverse affects as we are essentially wasting many of the resources involved in the production of food resources.
+            </p>
         </div>
       </div>
+      <div className="line-container">
+                <div className="line-break"></div>
+            </div>
+            <div className="stats">
+                <div className="users">
+                    <div className="stats-container">
+                        <div className="stats-item">
+                          <Image src={Guy1} alt="user"></Image>
+                            <h3>Over <span>200+</span> meals saved from the bin</h3>
+                        </div>
+                        <div className="stats-item">
+                          <Image src={Guy2} alt="user"></Image>
+                            <h3>Over <span>34</span> registered businesses</h3>
+                        </div>
+                        <div className="stats-item">
+                          <Image src={Guy3} alt="user"></Image>
+                            <h3>More than <span>5%</span> reduction in food waste worldwide</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div className="line-container">
+                <div className="line-break"></div>
+            </div>
       <div className="get-started">
         <h1 className="title">
           GET <span>STARTED</span>
@@ -30,23 +53,17 @@ export default function About() {
               <Image src={User} alt="user"></Image>
               <h3>I'M A USER</h3>
               <p>
-                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nisi
-                optio eum suscipit ipsam vero, quam totam obcaecati recusandae
-                eaque ad veritatis id esse doloremque asperiores amet voluptatum
-                saepe? Quae, modi.
+              Look for a good deal? Look no further than our website, where you can get started in just a few clicks.
               </p>
-              <button>Read More</button>
+              <button>Sign Up</button>
             </div>
             <div className="user-card">
               <Image src={Business} alt="user"></Image>
-              <h3>WE'RE A BUSINESS</h3>
+              <h3>I'M A BUSINESS</h3>
               <p>
-                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nisi
-                optio eum suscipit ipsam vero, quam totam obcaecati recusandae
-                eaque ad veritatis id esse doloremque asperiores amet voluptatum
-                saepe? Quae, modi.
+                  Are you a company? Minimize food waste and maximize impact by sharing your surplus food. 
               </p>
-              <button>Contact Us</button>
+              <button>Get in touch</button>
             </div>
           </div>
         </div>
