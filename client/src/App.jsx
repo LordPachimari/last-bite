@@ -6,14 +6,6 @@ import MenuItem from "./components/menuItem";
 export default function App() {
   console.log("sefjsoefj");
   return (
-<<<<<<< HEAD
-    <>
-      <h1>Welcome to LASTBITE</h1
-      <FoodItem />
-    </>
-  )
-}
-=======
     <BrowserRouter>
       <Routes>
         <Route path="/dashboard" element={<RestaurantDashboard />} />
@@ -25,4 +17,3 @@ export default function App() {
     </BrowserRouter>
   );
 }
->>>>>>> b8a8da1d09cd5b7bb97ad06291edef4b0727ffff
