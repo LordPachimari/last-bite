@@ -13,7 +13,7 @@ export default function Home() {
     <>
       <section id="front-page">
         <div className="landing-page">
-          <nav>
+          <div className="nav-bar">
             <div className="btn-container">
               <button
                 className="sign-btn sign-up"
@@ -32,13 +32,12 @@ export default function Home() {
                 SIGN IN
               </button>
             </div>
-          </nav>
+          </div>
           <div className="welcome">
             <h1 className="intro">Welcome to</h1>
             <h1 className="name">LASTBITE</h1>
             <p>
-              With every leftover meal delivered, you're helping the planet -
-              enjoy fresh, eco-friendly food near you.
+              Savor Every Mouthful, End Food Waste In Full
             </p>
             <form className="address">
               <div className="add-input">
