@@ -1,3 +1,5 @@
+import FoodItem from "./FoodItem.jsx"
+
 export default function App() {
   
   return (

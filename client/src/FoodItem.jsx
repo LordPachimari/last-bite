@@ -1,4 +1,5 @@
 import "./FoodItem.css"
+
 export default function FoodItem() {
   
   function fetchFoodItem() {
@@ -10,7 +11,10 @@ export default function FoodItem() {
 
   return (
     <>
-      <img className="food-item" src={foodItem.img_path} />
+        <h2>Test</h2>
+    	 <img className="food-item" src="src/test.jpg" />
+    	{/* <img className="food-item" src={require("./src/test.jpg")} />
+    	// <img className="food-item" src={foodItem.img_path} />*/}
     </>
   )
 }
