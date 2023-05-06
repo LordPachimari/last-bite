@@ -19,39 +19,13 @@
   margin: 0;
 }
 
+
 #about {
-    /* height: 100vh; */
-    /* background: #f6f6f6; */
-    padding: 3rem 6rem;
+    padding: 3rem 15rem;
+    /* background: red; */
 }
 
-.about-us {
-    /* height: 550px; */
-    margin-bottom: 3rem;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-}
-
-.about-us .left-container img {
-    width: 85%;
-}
-
-.about-us .right-container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
-.about-us .right-container h2{
-    font-size: 36px;
-    margin-bottom: 1.5rem;
-}   
-
-.about-us .right-container p{
-    font-size: 24px;
-    margin-bottom: 1.5rem;
-    width: 80%;
-}   
-
+/* Buttons */
 button {
     width: 150px;
     height: 50px;
@@ -63,8 +37,177 @@ button {
     font-weight: bold;
     cursor: pointer;
     transition: all 0.4s ease;
+    z-index: 10;
 }
 
+.btn-hide {
+    position: relative;
+    top: -56% !important;
+    transition: all 0.4s ease;
+}
+
+.btn-show {
+    position: relative;
+    top: 0%;
+    transition: all 0.4s ease;
+}
+
+.hide-section {
+    z-index: 1;
+    position: relative;
+    top: -350px;
+    transition: all 0.4s ease;
+}
+
+.show-section { 
+    z-index: 1;
+    position: relative;
+    top: 0px;
+    transition: all 0.4s ease;
+}
+
+.line-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 3rem 0;
+}
+.line-break{
+    width: 50%;
+    height: 1px;
+    background: #cfcfcf;
+}
+
+/* About Us */
+.about-us {
+    margin-bottom: 3rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.about-us .left-container img {
+    width: 80%;
+    border-radius: 15px;
+}
+
+.about-us .right-container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.about-us .right-container h2{
+    font-size: 36px;
+    margin-bottom: 1.5rem;
+}   
+
+.about-us .right-container p{
+    margin-bottom: 1.5rem;
+}   
+
+/* Hidden Text */
+.hidden-text {
+    position: absolute;
+    background: #fff;
+    width: 100%;
+    height: 100%;
+}
+
+
+.hidden-container {
+    position: relative;
+    overflow: hidden;
+}
+
+.hide {
+    position: absolute;
+    z-index: 1;
+    top: 0%;
+    transition: all 0.4s ease;
+}
+
+.show {
+    position: absolute;
+    top: 100%;
+    transition: all 0.4s ease;
+}
+
+.about-us .right-container {
+    font-size: 16px;
+    margin-bottom: 1.5rem;
+    line-height: 2.2rem;
+    width: 80%;
+}   
+
+.about-us .right-container span{
+    color: #F9822D;
+}   
+
+/* Stats */
+
+.stats {
+    z-index: 1;
+    margin-bottom: 3rem;
+}
+
+.stats .users {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.stats-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 90%;
+}
+
+.stats .stats-item {
+    width: 325px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.stats-item h3 {
+    margin-bottom: 1.5rem;
+    font-size: 36px;
+}
+
+.stats-item img {
+    width: 70%;
+    height: 70%;
+    margin-bottom: 1rem;
+}
+
+.stats-item span {
+    color: #F9822D;
+}
+
+.stats-item:nth-child(2) img {
+    width: 90%;
+    height: 90%;
+}
+
+.stats-item:nth-child(2) h3 {
+    position: relative;
+    top: 20px;
+}
+
+.stats .stats-item p {
+    text-align:center;
+    margin-bottom: 1.5rem;
+}
+
+
+/* Get Started*/
+
+.get-started {
+    z-index: 1;
+}
 
 .get-started .users {
     display: flex;
@@ -76,10 +219,8 @@ button {
     display: flex;
     align-items: center;
     justify-content: space-around;
-    /* background: red; */
     width: 60%;
 }
-
 
 .users .user-card {
     width: 325px;
@@ -113,6 +254,8 @@ button {
     margin-bottom: 1.5rem;
 }
 
+/*footer*/
+
 #footer {
     background: #f6f6f6;
     width: 100%;
@@ -133,10 +276,17 @@ button {
 .footer-section p {
     margin-bottom: 0.5rem;  
     cursor: pointer;
-    opacity: 50%;
+    color: #b8b8b8;
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 
+
+/*landing*/
 * {
     margin: 0;
     padding: 0;
@@ -153,14 +303,6 @@ body {
     padding: 0;
 }
 
-.landing-page {
-    padding: 3rem 12rem;
-    height: 100vh;
-    background-image: url('../../public/background.jpg');
-    background-repeat: none;
-    background-size: cover;
-    background-repeat: no-repeat;
-}
 
 nav {
     width: 100%;
@@ -263,7 +405,7 @@ nav {
 }
 
 .add-input input {
-    width: 370px;
+    width: 18vw;
 }
 
 .address input:focus {
@@ -271,8 +413,8 @@ nav {
 }
 
 .address .submit-btn {
-    width: 9%;
-    height: 90%;
+    width: 40px;
+    height: 40px;
     background: #F9822D;
     border: none;
     border-radius: 50%;

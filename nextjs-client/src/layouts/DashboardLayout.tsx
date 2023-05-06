@@ -15,6 +15,7 @@ import {
   Header,
   MediaQuery,
   Navbar,
+  Space,
   Text,
   UnstyledButton,
   rem,
@@ -205,6 +206,12 @@ export default function DashboardLayout({ children }: { children: ReactNode }) {
                 {currentUser && currentUser.role === "RESTAURANT"
                   ? "Restaurant dashboard"
                   : "Admin dashboard"}
+              </Text>
+            </Link>
+            <Space w={10} />
+            <Link href="/" className="no-underline">
+              <Text fz="lg" fw={700} color="orange">
+                HOME
               </Text>
             </Link>
           </div>

@@ -26,11 +26,23 @@ const DashboardLayout = dynamic(() => import("@/layouts/DashboardLayout"), {
 });
 import dynamic from "next/dynamic";
 import { GeneralStore } from "@/zustand/general";
-import Image from "next/image";
+import Image, { StaticImageData } from "next/image";
 import { supabase } from "@/supabaseClient";
 export default function AdminDashboard() {
   const user = GeneralStore((state) => state.currentUser);
   const [leftOvers, setLeftOvers] = useState<LeftOverItem[] | null>(null);
+  const ImageComponent = ({ url }: { url: string }) => {
+    if (url) {
+      try {
+        const image = JSON.parse(url) as StaticImageData;
+        return <Image src={image} width={400} height={400} alt="image" />;
+      } catch (error) {
+        console.error("Failed to parse image URL as JSON:", error);
+      }
+    }
+
+    return <></>;
+  };
   useEffect(() => {
     const fetch = async () => {
       const { data, error } = await supabase.from("last-bite").select("*");
@@ -45,14 +57,7 @@ export default function AdminDashboard() {
         leftOvers.map((item) => (
           <Card shadow="sm" key={item.id} padding="lg" radius="md" withBorder>
             <Card.Section>
-              {item && (
-                <Image
-                  src={JSON.parse(item.imageUrl) || ""}
-                  width={400}
-                  height={400}
-                  alt="image"
-                />
-              )}
+              {item && <ImageComponent url={item.imageUrl} />}
             </Card.Section>
 
             <Group position="apart" mt="md" mb="xs">

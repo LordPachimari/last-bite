@@ -13,10 +13,21 @@ import {
   Text,
   Title,
 } from "@mantine/core";
-import Image from "next/image";
+import Image, { StaticImageData } from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
+const ImageComponent = ({ url }: { url: string }) => {
+  if (url) {
+    try {
+      const image = JSON.parse(url) as StaticImageData;
+      return <Image src={image} width={200} height={200} alt="image" />;
+    } catch (error) {
+      console.error("Failed to parse image URL as JSON:", error);
+    }
+  }
 
+  return <></>;
+};
 export default function Marketplace() {
   const [leftOvers, setLeftOvers] = useState<LeftOverItem[] | null>(null);
   useEffect(() => {
@@ -26,6 +37,7 @@ export default function Marketplace() {
     };
     fetch();
   }, []);
+  console.log("leftOvers", leftOvers);
   return (
     <Box w="100%" h="100%">
       <Flex sx={{ alignItems: "center" }} w="100%" h={80} bg="orange.5">
@@ -81,14 +93,15 @@ export default function Marketplace() {
                 h={300}
               >
                 <Card.Section>
-                  {item && (
+                  {/* {item && (
                     <Image
                       src={JSON.parse(item.imageUrl) || ""}
                       width={200}
                       height={200}
                       alt="image"
                     />
-                  )}
+                  )} */}
+                  <ImageComponent url={item.imageUrl} />
                 </Card.Section>
 
                 <Group position="apart" mt="md" mb="xs">
