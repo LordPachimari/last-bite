@@ -16,6 +16,9 @@ import {
 import Image, { StaticImageData } from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
+import cartIcon from "../../../public/cart-icon.png"
+import searchIcon from "../../../public/search-icon.png"
+
 const ImageComponent = ({ url }: { url: string }) => {
   if (url) {
     try {
@@ -61,9 +64,22 @@ export default function Marketplace() {
             Support
           </Text>
           <Space w={500} />
-          <Input placeholder="search nearby kitchen and stores" w={300} />
-          <Button w={80} bg="white">
-            <Text color="black">Buy</Text>
+          <Input 
+            icon={<Image src={searchIcon} 
+                    alt="search-icon"
+                    height={16}
+                  />}
+            placeholder="Search nearby kitchen and stores" 
+            radius={50}
+            w={300} 
+          />
+          <Button w={80} radius={50} bg="white">
+            <Image src={cartIcon}
+              alt="cart-icon"
+              height={20}
+            />
+            <Space w={10}/>
+            <Text color="black" fz={20} c="grey" ff="sans-serif">2</Text>
           </Button>
         </Flex>
       </Flex>
