@@ -19,7 +19,7 @@ export default function Landing() {
                 <div className="welcome">
                     <h1 className="intro">Welcome to</h1>
                     <h1 className="name">LASTBITE</h1>
-                    <p>With every leftover meal delivered, you're helping the planet - enjoy fresh, eco-friendly food near you.</p>
+                    <p>Savor Every Mouthful, End Food Waste In Full</p>
                     <form className="address">
                         <div className="add-input">
                             <FontAwesomeIcon className="icon" icon={faLocationDot}></FontAwesomeIcon>

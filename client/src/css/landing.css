@@ -127,7 +127,7 @@ nav {
 }
 
 .add-input input {
-    width: 370px;
+    width: 18vw;
 }
 
 .address input:focus {
@@ -135,8 +135,8 @@ nav {
 }
 
 .address .submit-btn {
-    width: 9%;
-    height: 90%;
+    width: 40px;
+    height: 40px;
     background: #F9822D;
     border: none;
     border-radius: 50%;

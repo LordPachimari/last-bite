@@ -16,7 +16,7 @@ export default function Footer() {
                 </div>
                 <div className="footer-section">
                     <h3>Come Say Hello</h3>
-                    <p>Melbourne, VIC, 1234</p>
+                    <p>Melbourne, VIC, 3123</p>
                     <p>123 Random Street</p>
                 </div>
             </div>
