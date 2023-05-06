@@ -31,6 +31,25 @@ export default function DashboardLayout({ children }: { children: ReactNode }) {
 
   const itemList = DashboardStore((state) => state.itemList);
   const currentUser = GeneralStore((state) => state.currentUser);
+  const ImageComponent = ({ url }: { url: string }) => {
+    if (url) {
+      try {
+        const image = JSON.parse(url) as StaticImageData;
+        return (
+          <Image
+            src={JSON.parse(url) as StaticImageData}
+            alt="image"
+            width={100}
+            height={100}
+          />
+        );
+      } catch (error) {
+        console.error("Failed to parse image URL as JSON:", error);
+      }
+    }
+
+    return <></>;
+  };
 
   console.log("currentUser", currentUser);
 
@@ -83,16 +102,7 @@ export default function DashboardLayout({ children }: { children: ReactNode }) {
                 }}
               >
                 <Avatar color="cyan" radius="xl">
-                  {v.imageUrl ? (
-                    <Image
-                      src={JSON.parse(v.imageUrl) as StaticImageData}
-                      alt="image"
-                      width={100}
-                      height={100}
-                    />
-                  ) : (
-                    "M"
-                  )}
+                  {v.imageUrl ? <ImageComponent url={v.imageUrl} /> : "M"}
                 </Avatar>
                 <Box
                   sx={{
