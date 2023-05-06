@@ -10,9 +10,7 @@ export default function About() {
   return (
     <section id="about">
       <div className="about-us">
-        <div className="left-container">
-          <Image className="about-img" src={Restaurant} alt="about-img"></Image>
-        </div>
+        <Image className="about-img" src={Restaurant} alt="about-img"></Image>
         <div className="right-container">
             <h2>Our <span>Mission.</span></h2>
             <p>LastBite aims to address the goal of achieving responsible consumption and production and helps us strive forward to achieve said goal. According to the UN nearly 17% of total food that is available to consumers is wasted at household, food service and retail levels. These unsustainable patterns of purchase and consumption can have many adverse affects as we are essentially wasting many of the resources involved in the production of food resources.

@@ -125,8 +125,13 @@
   }
   
   .add-input {
+      display: flex;
       margin-left: 1rem;
   }
+
+  .add-input svg {
+    margin-right: 10px;
+}
   
   .add-input input {
       width: 18vw;
@@ -208,27 +213,34 @@
   
   .about-us {
       margin-bottom: 3rem;
-      display: grid;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       grid-template-columns: 1fr 1fr;
   }
   
-  .about-us .left-container .about-img {
-      width: 80%;
-      height: 97%;
+  .about-us .about-img {
+      max-width: 50vw;
+      height: auto;
       border-radius: 15px;
+      margin-right: 5%;
   }
-  
+  /*
   .about-us .right-container {
       position: relative;
       display: flex;
       flex-direction: column;
       justify-content: center;
-  }
+  }*/
   .about-us .right-container h2{
       font-size: 36px;
       margin-bottom: 1.5rem;
   }   
   
+  .stats .stats-item h3 {
+    text-align: center;
+  }
+
   .about-us .right-container p{
       margin-bottom: 1.5rem;
   }   
