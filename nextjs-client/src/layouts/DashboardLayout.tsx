@@ -35,14 +35,7 @@ export default function DashboardLayout({ children }: { children: ReactNode }) {
     if (url) {
       try {
         const image = JSON.parse(url) as StaticImageData;
-        return (
-          <Image
-            src={JSON.parse(url) as StaticImageData}
-            alt="image"
-            width={100}
-            height={100}
-          />
-        );
+        return <Image src={image} alt="image" width={100} height={100} />;
       } catch (error) {
         console.error("Failed to parse image URL as JSON:", error);
       }

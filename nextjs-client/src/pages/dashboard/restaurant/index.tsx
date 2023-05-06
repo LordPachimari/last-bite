@@ -14,7 +14,7 @@ import {
 } from "@mantine/core";
 import { useDisclosure } from "@mantine/hooks";
 import { useForm } from "@mantine/form";
-import { LeftOverItem } from "@/utils/types";
+import { LeftOverItem, LeftOverItemZod } from "@/utils/types";
 import { nanoid } from "nanoid";
 import { ReactElement, useEffect, useState } from "react";
 const GlobalLayout = dynamic(() => import("@/layouts/GlobalLayout"), {
@@ -40,6 +40,41 @@ export default function RestaurantDashboard() {
   const addItem = DashboardStore((state) => state.addItem);
   const [images, setImages] = useState<StaticImageData[]>([]);
   const user = GeneralStore((state) => state.currentUser);
+  const [errorMessage, setErrorMessage] = useState("");
+  const submitHandler = async (values: {
+    name: string;
+    description: string;
+    quantity: number;
+  }) => {
+    form.validate();
+
+    setLoading(true);
+
+    console.log("error", form.errors);
+    const url = isImageSelected ? JSON.stringify(isImageSelected) : "";
+    const item: LeftOverItem = {
+      description: values.description,
+      name: values.name,
+      quantity: values.quantity,
+      imageUrl: url,
+      restaurantId: user ? user.id : nanoid(),
+    };
+    const result = LeftOverItemZod.safeParse(item);
+    if (result.success) {
+      console.log("item added", item);
+
+      addItem(item);
+      setErrorMessage("");
+
+      close();
+
+      await supabase.from("last-bite").insert(item);
+    } else {
+      setErrorMessage("Fill all the input");
+    }
+
+    setLoading(false);
+  };
   const form = useForm({
     initialValues: {
       name: "",
@@ -67,33 +102,12 @@ export default function RestaurantDashboard() {
     <>
       <Modal opened={opened} onClose={close} title="Left over item">
         <form
-          onSubmit={form.onSubmit(async (values) => {
-            form.validate();
-
-            setLoading(true);
-
-            console.log("error", form.errors);
-            const url = isImageSelected
-              ? JSON.stringify(isImageSelected)
-              : "random";
-            const item: LeftOverItem = {
-              description: values.description,
-              name: values.name,
-              quantity: values.quantity,
-              imageUrl: url,
-              restaurantId: user ? user.id : nanoid(),
-            };
-            console.log("item added", item);
-
-            addItem(item);
-
-            await supabase.from("last-bite").insert(item);
-
-            setLoading(false);
-            close();
+          onSubmit={form.onSubmit((values) => {
+            submitHandler(values).catch((err) => console.log(err));
           })}
         >
           <Flex direction="column" gap="sm">
+            {errorMessage && <Text color="red">{errorMessage}</Text>}
             <Text fw="bold">Item name</Text>
             <Input {...form.getInputProps("name")} />
             <Text fw="bold">description</Text>

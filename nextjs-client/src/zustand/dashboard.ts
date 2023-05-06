@@ -12,8 +12,15 @@ interface DashboardState {
 
 export const DashboardStore = create<DashboardState>((set, get) => ({
   itemList: [],
+  // addItem: (item) => {
+  //   const list = get().itemList;
+  //   set({ itemList: [...list, item] });
+  // },
   addItem: (item) => {
-    const list = get().itemList;
-    set({ itemList: [...list, item] });
+    set(
+      produce((state: DashboardState) => {
+        state.itemList.push(item);
+      })
+    );
   },
 }));
