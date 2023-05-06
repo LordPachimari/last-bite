@@ -1,3 +1,3 @@
-export default function FoodItem() {
+export default function FoodItem(props) {
   return <h1>An image...</h1>
 }
