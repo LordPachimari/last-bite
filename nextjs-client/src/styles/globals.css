@@ -1,0 +1,21 @@
+:root {
+
+}
+
+.page {
+  min-width: 280px;
+  width: 100%;
+  max-width: 1980px;
+  min-height: 100vh;
+}
+.no-underline{
+  text-decoration: none;
+  color:black
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
