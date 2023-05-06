@@ -1,3 +1,4 @@
+import { users } from "@/data/data";
 import { Restaurant, User } from "@/utils/types";
 import { DashboardStore } from "@/zustand/dashboard";
 import { GeneralStore } from "@/zustand/general";
@@ -22,7 +23,7 @@ import {
 import { current } from "immer";
 import Image, { StaticImageData } from "next/image";
 import Link from "next/link";
-import { ReactNode, useState } from "react";
+import { ReactNode, useEffect, useState } from "react";
 export default function DashboardLayout({ children }: { children: ReactNode }) {
   const theme = useMantineTheme();
   const [navbarOpened, setNavbarOpened] = useState(false);
@@ -41,6 +42,7 @@ export default function DashboardLayout({ children }: { children: ReactNode }) {
       </Center>
     );
   }
+  console.log("list", itemList);
 
   return (
     <AppShell
@@ -55,10 +57,13 @@ export default function DashboardLayout({ children }: { children: ReactNode }) {
       navbarOffsetBreakpoint="sm"
       asideOffsetBreakpoint="sm"
       navbar={
-        <Navbar
-          hiddenBreakpoint="sm"
-          hidden={!navbarOpened}
-          width={{ sm: 200, lg: 300 }}
+        <Box
+          // hiddenBreakpoint="sm"
+          // hidden={!navbarOpened}
+          // width={{ sm: 200, lg: 300 }}
+          w={250}
+          p={10}
+          bg="white"
         >
           {itemList.map((v, i) => (
             <Link
@@ -109,7 +114,7 @@ export default function DashboardLayout({ children }: { children: ReactNode }) {
               </Flex>
             </Link>
           ))}
-        </Navbar>
+        </Box>
       }
       footer={
         <Footer height="fit-content" p="md">

@@ -57,14 +57,11 @@ export default function RestaurantDashboard() {
       const index = foodImages.findIndex(
         (im) => im.restaurantName === user.name
       );
-      console.log("food images", foodImages, user.name);
       if (index >= 0) {
         setImages(foodImages[index].images);
       }
     }
   }, [user]);
-
-  console.log("images", images);
 
   return (
     <>
@@ -72,7 +69,9 @@ export default function RestaurantDashboard() {
         <form
           onSubmit={form.onSubmit(async (values) => {
             form.validate();
+
             setLoading(true);
+
             console.log("error", form.errors);
             const url = isImageSelected
               ? JSON.stringify(isImageSelected)
@@ -84,14 +83,13 @@ export default function RestaurantDashboard() {
               imageUrl: url,
               restaurantId: user ? user.id : nanoid(),
             };
-            console.log(item);
+            console.log("item added", item);
 
             addItem(item);
 
-            const { error } = await supabase.from("last-bite").insert(item);
+            await supabase.from("last-bite").insert(item);
 
             setLoading(false);
-
             close();
           })}
         >
