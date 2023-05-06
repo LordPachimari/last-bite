@@ -1,7 +1,7 @@
 import { Restaurant, User } from "@/utils/types";
 import DelliRestaurant from "../../public/Delhi-Streets-logo-colour-details.png";
 import Mac from "../../public/McDonalds-Logo.png";
-import Nene from "../../public/NeNe-Logo-scaled-1.jpg";
+import Nene from "../../public/neneLogo.png";
 import Sushi from "../../public/Sushi_Hub-01_680x450.jpg";
 import Jorno from "../../public/jorno.jpg";
 import { StaticImageData } from "next/image";

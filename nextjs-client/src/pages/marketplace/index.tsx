@@ -1,3 +1,4 @@
+import { restaurants } from "@/data/data";
 import { supabase } from "@/supabaseClient";
 import { LeftOverItem } from "@/utils/types";
 import {
@@ -14,6 +15,7 @@ import {
 } from "@mantine/core";
 import Image from "next/image";
 import { useEffect, useState } from "react";
+import Nene from "../../../public/NeNe-Logo-scaled-1.jpg";
 
 export default function Marketplace() {
   const [leftOvers, setLeftOvers] = useState<LeftOverItem[] | null>(null);
@@ -54,8 +56,13 @@ export default function Marketplace() {
             Listing
           </Title>
         </Flex>
-        return (
-        <Center w="100%" h="100%" sx={{ gap: 10, flexWrap: "wrap" }}>
+        <Flex
+          w="100%"
+          h="100%"
+          ml={100}
+          mt={10}
+          sx={{ gap: 10, flexWrap: "wrap" }}
+        >
           {leftOvers &&
             leftOvers.map((item) => (
               <Card
@@ -64,13 +71,15 @@ export default function Marketplace() {
                 padding="lg"
                 radius="md"
                 withBorder
+                w={200}
+                h={300}
               >
                 <Card.Section>
                   {item && (
                     <Image
                       src={JSON.parse(item.imageUrl) || ""}
-                      width={400}
-                      height={400}
+                      width={200}
+                      height={200}
                       alt="image"
                     />
                   )}
@@ -85,8 +94,42 @@ export default function Marketplace() {
                 </Text>
               </Card>
             ))}
-        </Center>
-        );
+        </Flex>
+        <Flex ml={100} mt={20}>
+          <Title order={1}>Near by</Title>
+          <Title order={1} color="orange" ml={10}>
+            Stores
+          </Title>
+        </Flex>
+        <Flex sx={{ gap: 10, flexWrap: "wrap" }} ml={100}>
+          {restaurants &&
+            restaurants.map((item) => (
+              <Card
+                shadow="sm"
+                key={item.name}
+                padding="lg"
+                radius="md"
+                withBorder
+                w={200}
+                h={300}
+              >
+                <Card.Section>
+                  {item && (
+                    <Image
+                      src={item.avatarUrl}
+                      width={200}
+                      height={200}
+                      alt="image"
+                    />
+                  )}
+                </Card.Section>
+
+                <Group position="apart" mt="md" mb="xs">
+                  <Text weight={500}>{item?.name}</Text>
+                </Group>
+              </Card>
+            ))}
+        </Flex>
       </Box>
     </Box>
   );
