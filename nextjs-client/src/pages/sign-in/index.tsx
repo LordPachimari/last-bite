@@ -14,7 +14,7 @@ import Image, { StaticImageData } from "next/image";
 import { ReactElement, useState } from "react";
 import Customer from "../../../public/customer.jpg";
 
-import Restaurant from "../../../public/restaurant.jpg";
+import Restaurant from "../../../public/restaurant1.jpg";
 import Admin from "../../../public/admin.jpg";
 import { useRouter } from "next/router";
 import { GeneralStore } from "@/zustand/general";

@@ -3,14 +3,13 @@ import type { AppProps, AppType } from "next/app";
 
 import { ReactElement, ReactNode } from "react";
 import { NextPage } from "next";
-import { Noto_Sans } from "next/font/google";
+import { Roboto } from "next/font/google";
 import Head from "next/head";
 import { MantineProvider } from "@mantine/core";
-const NotoSans = Noto_Sans({
+const _Roboto = Roboto({
   subsets: ["latin"],
   weight: ["400"],
 });
-
 export type NextPageWithLayout<P = {}, IP = P> = NextPage<P, IP> & {
   getLayout?: (page: ReactElement) => ReactNode;
 };
@@ -41,7 +40,7 @@ const MyApp: AppType = ({
           colorScheme: "light",
         }}
       >
-        <main className={NotoSans.className}>
+        <main className={_Roboto.className}>
           {getLayout(<Component {...pageProps} />)}
         </main>
       </MantineProvider>

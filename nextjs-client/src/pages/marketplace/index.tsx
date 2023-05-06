@@ -14,8 +14,8 @@ import {
   Title,
 } from "@mantine/core";
 import Image from "next/image";
+import Link from "next/link";
 import { useEffect, useState } from "react";
-import Nene from "../../../public/NeNe-Logo-scaled-1.jpg";
 
 export default function Marketplace() {
   const [leftOvers, setLeftOvers] = useState<LeftOverItem[] | null>(null);
@@ -29,16 +29,22 @@ export default function Marketplace() {
   return (
     <Box w="100%" h="100%">
       <Flex sx={{ alignItems: "center" }} w="100%" h={80} bg="orange.5">
-        <Flex ml={100}>
-          <Title order={1}>Last</Title>
-          <Title order={1} color="white">
-            Bite
-          </Title>
-        </Flex>
+        <Link href="/" className="no-underline">
+          <Flex ml={100}>
+            <Title order={1}>Last</Title>
+            <Title order={1} color="white">
+              Bite
+            </Title>
+          </Flex>
+        </Link>
+
         <Flex ml={100} gap={50}>
-          <Text fz="lg" fw="bold" color="white">
-            Home
-          </Text>
+          <Link href="/" className="no-underline">
+            <Text fz="lg" fw="bold" color="white">
+              Home
+            </Text>
+          </Link>
+
           <Text fz="lg" fw="bold" color="white">
             Support
           </Text>
