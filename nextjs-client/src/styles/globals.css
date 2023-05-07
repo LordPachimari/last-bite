@@ -407,6 +407,7 @@
     background-color: white;
     position: absolute;
     right: 0px;
+    z-index: 100px;
 }
 
 #checkout-bar header {
