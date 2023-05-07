@@ -82,8 +82,8 @@ export default function Marketplace() {
             Support
           </Text>
           <Space w={300} />
-          <>
-            {/* <Modal opened={opened} onClose={close} title="Checkout">
+          {/* <>
+            <Modal opened={opened} onClose={close} title="Checkout">
               {leftOverItems.map((item) => (
                 <Card key={item.id} sx={{ display: "flex" }}>
                   <ImageComponent
@@ -116,9 +116,9 @@ export default function Marketplace() {
               >
                 <Text color="white">Place order</Text>
               </Button>
-            </Modal> */}
+            </Modal>
 
-            {/* <Group position="center">
+            <Group position="center">
               <Button
                 bg="white"
                 sx={{ ":hover": { backgroundColor: "orange" } }}
@@ -137,13 +137,13 @@ export default function Marketplace() {
                   ></path>
                 </svg>
               </Button>
-            </Group> */}
-          </>
+            </Group>
+          </> */}
           <Button
             w={80}
             radius={50}
             bg="white"
-            onClick={() => setCheckoutState(true)}
+            onClick={() => setCheckoutState((val) => !val)}
           >
             <Image src={cartIcon} alt="cart-icon" height={20} />
             <Space w={10} />

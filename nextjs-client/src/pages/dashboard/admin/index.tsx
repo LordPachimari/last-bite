@@ -52,10 +52,13 @@ export default function AdminDashboard() {
   }, []);
 
   return (
-    <Center
+    <Flex
       w="100%"
-      h="100%"
-      sx={{ gap: 10, flexWrap: "wrap", overflow: "scroll" }}
+      sx={{
+        gap: 10,
+        flexWrap: "wrap",
+        overflow: "scroll",
+      }}
     >
       {leftOvers &&
         leftOvers.map((item) => (
@@ -76,7 +79,7 @@ export default function AdminDashboard() {
             </Button>
           </Card>
         ))}
-    </Center>
+    </Flex>
   );
 }
 AdminDashboard.getLayout = function getLayout(page: ReactElement) {
