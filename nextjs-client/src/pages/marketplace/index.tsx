@@ -16,9 +16,9 @@ import {
 import Image, { StaticImageData } from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
-import cartIcon from "../../../public/cart-icon.png"
-import searchIcon from "../../../public/search-icon.png"
-import Checkout from "@/components/Checkout"
+import cartIcon from "../../../public/cart-icon.png";
+import searchIcon from "../../../public/search-icon.png";
+import Checkout from "@/components/Checkout";
 
 const ImageComponent = ({ url }: { url: string }) => {
   if (url) {
@@ -66,24 +66,25 @@ export default function Marketplace() {
           <Text fz="lg" fw="bold" color="white">
             Support
           </Text>
-          <Space w={500} />
-          <Input 
-            icon={<Image src={searchIcon} 
-                    alt="search-icon"
-                    height={16}
-                  />}
-            placeholder="Search nearby kitchen and stores" 
+          <Space w={300} />
+          <Button
+            w={80}
             radius={50}
-            w={300} 
-          />
-          <Button w={80} radius={50} bg="white" onClick={() => setCheckoutState(true)}>
-            <Image src={cartIcon}
-              alt="cart-icon"
-              height={20}
-            />
-            <Space w={10}/>
-            <Text color="black" fz={20} c="grey">2</Text>
+            bg="white"
+            onClick={() => setCheckoutState(true)}
+          >
+            <Image src={cartIcon} alt="cart-icon" height={20} />
+            <Space w={10} />
+            <Text color="black" fz={20} c="grey">
+              2
+            </Text>
           </Button>
+          <Input
+            icon={<Image src={searchIcon} alt="search-icon" height={16} />}
+            placeholder="Search nearby kitchen and stores"
+            radius={50}
+            w={300}
+          />
         </Flex>
       </Flex>
       <Box mt={20}>
