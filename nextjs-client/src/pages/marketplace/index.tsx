@@ -79,7 +79,7 @@ export default function Marketplace() {
               height={20}
             />
             <Space w={10}/>
-            <Text color="black" fz={20} c="grey" ff="sans-serif">2</Text>
+            <Text color="black" fz={20} c="grey">2</Text>
           </Button>
         </Flex>
       </Flex>
