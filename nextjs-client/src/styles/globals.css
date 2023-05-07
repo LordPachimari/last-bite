@@ -529,6 +529,7 @@
     background-color: #F9822D;
     border: none;
     color: white;
+    cursor: pointer;
 }
 
 #checkout-bar button.order-button {
