@@ -404,6 +404,9 @@
     box-shadow: -1px 1px 10px;
     padding-bottom: 25px;
     border-radius: 0px 0px 0px 5px;
+    background-color: white;
+    position: absolute;
+    right: 0px;
 }
 
 #checkout-bar header {

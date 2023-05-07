@@ -4,6 +4,7 @@ import { Inter } from "next/font/google";
 
 import About from "@/components/About";
 import Footer from "@/components/Footer";
+import Checkout from "@/components/Checkout";
 import { useRouter } from "next/router";
 const inter = Inter({ subsets: ["latin"] });
 

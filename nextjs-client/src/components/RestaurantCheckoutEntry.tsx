@@ -22,10 +22,6 @@ export default function RestaurantCheckoutEntry( { entry }:RestaurantCheckoutEnt
                 <div className="upper-row">
                     <div className="restaurant-name">{entry.restaurant}</div>
                     <button className="tip-button" type="button">Tip</button>
-                    {/*<div className="right-upper-row">
-                        <button className="tip-button" type="button">Tip</button>
-                        <div className="selected-time">Today, 5:29 pm</div>
-                    </div>*/}
                 </div>
                 <div className="middle-row">
                     <div className="right-middle-row">
@@ -42,7 +38,7 @@ export default function RestaurantCheckoutEntry( { entry }:RestaurantCheckoutEnt
                 </div>
                 <div className="bottom-row">
                     <p className="pick-up-text">Pick-up at:</p>
-                    <div className="selected-time">Today, 5:29 pm</div>
+                    <div className="selected-time">Today, 5:30 pm</div>
                 </div>
             </div>
         </>

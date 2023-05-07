@@ -18,6 +18,7 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 import cartIcon from "../../../public/cart-icon.png"
 import searchIcon from "../../../public/search-icon.png"
+import Checkout from "@/components/Checkout"
 
 const ImageComponent = ({ url }: { url: string }) => {
   if (url) {
@@ -33,6 +34,7 @@ const ImageComponent = ({ url }: { url: string }) => {
 };
 export default function Marketplace() {
   const [leftOvers, setLeftOvers] = useState<LeftOverItem[] | null>(null);
+  const [checkoutState, setCheckoutState] = useState<Boolean | null>(false);
   useEffect(() => {
     const fetch = async () => {
       const { data, error } = await supabase.from("last-bite").select("*");
@@ -43,6 +45,7 @@ export default function Marketplace() {
   console.log("leftOvers", leftOvers);
   return (
     <Box w="100%" h="100%">
+      {checkoutState && <Checkout />}
       <Flex sx={{ alignItems: "center" }} w="100%" h={80} bg="orange.5">
         <Link href="/" className="no-underline">
           <Flex ml={100}>
@@ -73,7 +76,7 @@ export default function Marketplace() {
             radius={50}
             w={300} 
           />
-          <Button w={80} radius={50} bg="white">
+          <Button w={80} radius={50} bg="white" onClick={() => setCheckoutState(true)}>
             <Image src={cartIcon}
               alt="cart-icon"
               height={20}
