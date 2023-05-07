@@ -52,7 +52,11 @@ export default function AdminDashboard() {
   }, []);
 
   return (
-    <Center w="100%" h="100%" sx={{ gap: 10, flexWrap: "wrap" }}>
+    <Center
+      w="100%"
+      h="100%"
+      sx={{ gap: 10, flexWrap: "wrap", overflow: "scroll" }}
+    >
       {leftOvers &&
         leftOvers.map((item) => (
           <Card shadow="sm" key={item.id} padding="lg" radius="md" withBorder>

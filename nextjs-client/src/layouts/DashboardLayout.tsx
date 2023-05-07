@@ -203,20 +203,17 @@ export default function DashboardLayout({ children }: { children: ReactNode }) {
                 mr="xl"
               />
             </MediaQuery>
-
-            <Link href="/dashboard/restaurant" className="no-underline">
-              <Text fz="lg" fw={700} color="orange">
-                {currentUser && currentUser.role === "RESTAURANT"
-                  ? "Restaurant dashboard"
-                  : "Admin dashboard"}
-              </Text>
-            </Link>
-            <Space w={10} />
             <Link href="/" className="no-underline">
-              <Text fz="lg" fw={700} color="orange">
+              <Text fz="lg" fw={700} color="orange" mr={20}>
                 HOME
               </Text>
             </Link>
+            <Link href="/dashboard/restaurant" className="no-underline">
+              <Text fz="lg" fw={700} color="orange">
+                Post
+              </Text>
+            </Link>
+            <Space w={10} />
           </div>
         </Header>
       }
