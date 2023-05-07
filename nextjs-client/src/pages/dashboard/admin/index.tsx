@@ -35,7 +35,7 @@ export default function AdminDashboard() {
     if (url) {
       try {
         const image = JSON.parse(url) as StaticImageData;
-        return <Image src={image} width={400} height={400} alt="image" />;
+        return <Image src={image} width={200} height={200} alt="image" />;
       } catch (error) {
         console.error("Failed to parse image URL as JSON:", error);
       }
